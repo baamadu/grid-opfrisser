@@ -1,0 +1,30 @@
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header'
+    'sidebar main main'
+    'footer footer footer';
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: #e41a1a;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: rgb(34, 223, 27);
+}
+
+.main {
+  grid-area: main;
+  background-color: rgb(78, 18, 245);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #e27e0c;
+}
