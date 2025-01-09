@@ -1,0 +1,106 @@
+*margin {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: grid;
+  gap: 10px;
+  background-color: yellow;
+  
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 40px repeat(10, 80px) 40px;
+  grid-template-areas:
+    "hd"
+    "C1"
+    "C2"
+    "C3"
+    "C4"
+    "C5"
+    "C6"
+    "C7"
+    "C8"
+    "C9"
+    "as"
+    "ft";
+}
+
+header {
+  grid-area: hd;
+  background-color: firebrick;
+}
+.content {
+  background-color: aquamarine;
+}
+.content:nth-child(2) {
+  grid-area: c1;
+}
+.content:nth-child(3) {
+  grid-area: c2;
+}
+.content:nth-child(4) {
+  grid-area: c3;
+}
+.content:nth-child(5) {
+  grid-area: c4;
+}
+.content:nth-child(6) {
+  grid-area: c5;
+}
+.content:nth-child(7) {
+  grid-area: c6;
+}
+.content:nth-child(8) {
+  grid-area: c7;
+}
+.content:nth-child(9) {
+  grid-area: c8;
+}
+.content:nth-child(10) {
+  grid-area: c9;
+}
+aside {
+  grid-area: as;
+  background-color: gray;
+}
+
+.overlay{
+  background-color: rgba(255, 170, 15, 0.76);
+  grid-area: c5-start / c5-start / c6-end / c6-end ;
+}
+
+footer {
+  grid-area: ft;
+  background-color: aqua;
+}
+
+@media screen and (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 40px repeat(6, 80px) 40px;
+    grid-template-areas:
+      "hd hd"
+      "c1 c2"
+      "c3 c4"
+      "c5 c6"
+      "c7 c8"
+      "c9."
+      "as as"
+      "ft ft";
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .wrapper {
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 40px repeat(3, 1fr) 40px;
+    grid-template-areas: 
+    "hd hd hd hd"
+    "c1 c2 c3 as"
+    "c4 c5 c6 as"
+    "c7 c8 c9 as"
+    "ft ft ft ft";
+  }
+}
+
